@@ -6,7 +6,7 @@ EAPI="5"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
 
-inherit gnome2 readme.gentoo
+inherit gnome2 readme.gentoo vala
 
 DESCRIPTION="The Gnome Terminal"
 HOMEPAGE="https://help.gnome.org/users/gnome-terminal/"
@@ -20,7 +20,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~
 RDEPEND="
 	>=dev-libs/glib-2.33.2:2
 	>=x11-libs/gtk+-3.6:3[X]
-	>=x11-libs/vte-0.38.0:2.91
+	>=x11-libs/vte-0.38.0:2.90
 	>=gnome-base/gconf-2.31.3
 	>=gnome-base/dconf-0.12
 	>=gnome-base/gsettings-desktop-schemas-0.1.0
@@ -44,6 +44,11 @@ DEPEND="${RDEPEND}
 DOC_CONTENTS="To get previous working directory inherited in new opened
 	tab you will need to add the following line to your ~/.bashrc:\n
 	. /etc/profile.d/vte.sh"
+
+src_prepare() {
+	vala_src_prepare
+	gnome2_src_prepare
+}
 
 src_configure() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS"

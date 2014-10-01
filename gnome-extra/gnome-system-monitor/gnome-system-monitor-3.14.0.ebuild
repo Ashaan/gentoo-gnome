@@ -13,7 +13,7 @@ HOMEPAGE="https://help.gnome.org/users/gnome-system-monitor/"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="systemd +X"
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 RDEPEND="
 	>=dev-libs/glib-2.37.3:2
@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	# From 'master', bug #516716
-	epatch "${FILESDIR}/${PN}-3.12.2-configure-wnck.patch"
+	#epatch "${FILESDIR}/${PN}-3.12.2-configure-wnck.patch"
 	eautoreconf
 	gnome2_src_prepare
 }

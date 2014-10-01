@@ -13,7 +13,7 @@ DESCRIPTION="Clutter is a library for creating graphical user interfaces"
 
 LICENSE="LGPL-2.1+ FDL-1.1+"
 SLOT="1.0"
-IUSE="debug doc gtk +introspection +egl test wayland" # evdev tslib
+IUSE="debug doc gtk +introspection +egl test wayland +evdev +tslib" # evdev tslib
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 
 # NOTE: glx flavour uses libdrm + >=mesa-7.3
@@ -41,6 +41,7 @@ RDEPEND="
 	gtk? ( >=x11-libs/gtk+-3.3.18:3 )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.6 )
 	wayland? ( >=dev-libs/wayland-1.5.90 )
+        evdev? ( >=dev-libs/libinput-0.5 ) 
 "
 DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.20
@@ -82,7 +83,6 @@ src_configure() {
 		--disable-quartz-backend \
 		--disable-win32-backend \
 		--disable-tslib-input \
-		--disable-evdev-input \
 		$(usex debug --enable-debug=yes --enable-debug=minimum) \
 		$(use_enable doc docs) \
 		$(use_enable gtk gdk-backend) \
@@ -90,7 +90,9 @@ src_configure() {
 		$(use_enable test gdk-pixbuf) \
 		$(use_enable egl egl-backend) \
 		$(use_enable wayland wayland-backend) \
-		$(use_enable wayland wayland-compositor)
+		$(use_enable wayland wayland-compositor) \
+                $(use_enable evdev evdev-input) \
+                $(use_enable tslib tslib-input) 
 }
 
 src_test() {

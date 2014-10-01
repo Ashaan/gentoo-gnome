@@ -13,12 +13,12 @@ HOMEPAGE="https://git.gnome.org/browse/gnome-settings-daemon"
 
 LICENSE="GPL-2+"
 SLOT="0"
-IUSE="+colord +cups debug +i18n input_devices_wacom -openrc-force packagekit policykit +short-touchpad-timeout smartcard +udev"
+IUSE="+colord +cups debug +i18n input_devices_wacom -openrc-force packagekit policykit smartcard +udev"
 REQUIRED_USE="
 	packagekit? ( udev )
 	smartcard? ( udev )
 "
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
 
 COMMON_DEPEND="
 	>=dev-libs/glib-2.37.7:2
@@ -92,8 +92,8 @@ src_prepare() {
 	# Apparently this change severely affects touchpad usability for some
 	# people, so revert it if USE=short-touchpad-timeout.
 	# Revisit if/when upstream adds a setting for customizing the timeout.
-	use short-touchpad-timeout &&
-		epatch "${FILESDIR}/${PN}-3.7.90-short-touchpad-timeout.patch"
+#	use short-touchpad-timeout &&
+#		epatch "${FILESDIR}/${PN}-3.7.90-short-touchpad-timeout.patch"
 
 	# Make colord and wacom optional; requires eautoreconf
 	epatch "${FILESDIR}/${P}-optional.patch"

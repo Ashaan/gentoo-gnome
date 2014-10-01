@@ -31,7 +31,7 @@ RDEPEND="
 
 	avahi? ( >=net-dns/avahi-0.6.26[dbus,gtk3] )
 	rdp? ( net-misc/freerdp )
-	ssh? ( >=x11-libs/vte-0.20:2.90 )
+	ssh? ( >=x11-libs/vte-0.38:2.90 )
 	spice? (
 		app-emulation/spice-protocol
 		>=net-misc/spice-gtk-0.5[gtk3] )

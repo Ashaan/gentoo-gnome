@@ -15,7 +15,7 @@ LICENSE="GPL-2+"
 SLOT="1"
 #https://bugzilla.gnome.org/show_bug.cgi?id=737213
 IUSE="+exif +introspection +jpeg lcms +svg tiff +xmp"
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 REQUIRED_USE="exif? ( jpeg )"
 

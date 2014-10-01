@@ -16,7 +16,7 @@ SLOT="0"
 # TODO: coverage ?
 IUSE="test +X"
 
-KEYWORDS="alpha amd64 ~arm ia64 ppc ppc64 ~sh sparc x86 ~x86-fbsd ~arm-linux ~x86-linux"
+KEYWORDS="alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~arm-linux ~x86-linux"
 
 RDEPEND="
 	>=dev-libs/glib-2.39.1:2

@@ -13,7 +13,7 @@ DESCRIPTION="Library for embedding a Clutter canvas (stage) in GTK+"
 HOMEPAGE="http://live.gnome.org/Clutter"
 
 SLOT="1.0"
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
 IUSE="examples +introspection"
 
 RDEPEND="

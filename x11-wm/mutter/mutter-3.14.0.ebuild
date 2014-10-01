@@ -13,7 +13,7 @@ HOMEPAGE="http://git.gnome.org/browse/mutter/"
 LICENSE="GPL-2+"
 SLOT="0"
 IUSE="+introspection test wayland"
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc x86"
 
 COMMON_DEPEND="
 	>=x11-libs/pango-1.2[X,introspection?]
@@ -78,5 +78,6 @@ src_configure() {
 		--enable-startup-notification \
 		--enable-verbose-mode \
 		--with-libcanberra \
+                --disable-kms \
 		$(use_enable introspection)
 }

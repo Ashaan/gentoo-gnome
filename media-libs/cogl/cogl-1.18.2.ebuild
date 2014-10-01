@@ -15,7 +15,7 @@ LICENSE="MIT BSD"
 SLOT="1.0/20" # subslot = .so version
 # doc and profile disable for now due bugs #484750 and #483332
 IUSE="examples gles2 gstreamer +introspection +opengl +pango test wayland" # doc profile
-KEYWORDS="~alpha amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
 
 COMMON_DEPEND="
 	>=dev-libs/glib-2.32:2
@@ -95,6 +95,7 @@ src_configure() {
 		$(use_enable test unit-tests) \
 		$(use_enable wayland wayland-egl-platform) \
 		$(use_enable wayland wayland-egl-server) \
+                $(use_enable wayland kms-egl-platform) \
 		--disable-profile
 #		$(use_enable profile)
 }
