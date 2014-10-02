@@ -114,7 +114,7 @@ src_prepare() {
 }
 
 src_configure() {
-	use nsplugin && DOCS="${DOCS} browser-plugin/README.browser-plugin"
+#	use nsplugin && DOCS="${DOCS} browser-plugin/README.browser-plugin"
 
 	# Disabled: sample-python, sample-vala
 	local plugins="apple-trailers,autoload-subtitles,brasero-disc-recorder"
