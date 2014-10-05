@@ -95,7 +95,7 @@ src_configure() {
 		$(use_enable test unit-tests) \
 		$(use_enable wayland wayland-egl-platform) \
 		$(use_enable wayland wayland-egl-server) \
-                $(use_enable wayland kms-egl-platform) \
+                --enable-kms-egl-platform \
 		--disable-profile
 #		$(use_enable profile)
 }
