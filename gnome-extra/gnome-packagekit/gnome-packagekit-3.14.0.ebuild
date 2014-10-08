@@ -25,9 +25,8 @@ RDEPEND="
 	x11-libs/pango
 	>=dev-libs/dbus-glib-0.73
 
-	>=app-admin/packagekit-base-0.7.2[udev]
-	>=app-admin/packagekit-gtk-0.7.2
-	>=media-libs/libcanberra-0.10[gtk3]
+	>=app-admin/packagekit-0.8.0
+	>=media-libs/libcanberra-0.10
 	>=sys-apps/dbus-1.1.2
 
 	media-libs/fontconfig
