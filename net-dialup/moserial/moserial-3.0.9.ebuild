@@ -12,7 +12,7 @@ HOMEPAGE="https://live.gnome.org/moserial"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ppc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-libs/glib-2.16:2
